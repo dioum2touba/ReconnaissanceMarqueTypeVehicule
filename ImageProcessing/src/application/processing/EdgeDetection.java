@@ -98,7 +98,7 @@ public class EdgeDetection {
                 writeBackImage.setRGB(j, i, color.getRGB());
             }
         }
-        File outputFile = new File("D:\\Memoire\\EdgeDetection\\edgesTmp"+(int)Math.floor(Math.random() * 62)+".png");
+        File outputFile = new File("D:\\Memoire\\EdgeDetection\\edgesTmp"+(int)Math.floor(Math.random() * 626755)+".png");
         ImageIO.write(writeBackImage, "png", outputFile);
         return outputFile;
     }

@@ -97,7 +97,7 @@ public class IndexController implements Initializable  {
     	if(image != null)
     	{
     		System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
-    		nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 62)+".jpg";
+    		nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
     		    try {
     		      ImageIO.write(image, "jpg", new File(nomImageNB));
     	    		im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
