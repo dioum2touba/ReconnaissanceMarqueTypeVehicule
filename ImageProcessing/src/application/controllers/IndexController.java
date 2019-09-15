@@ -1,5 +1,6 @@
 package application.controllers;
 
+import java.awt.TextField;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
@@ -55,6 +56,90 @@ public class IndexController implements Initializable  {
 
     @FXML
     private Button gaussianFilter;
+
+    @FXML
+    private TextField f1c1l1;
+
+    @FXML
+    private TextField f1c1l2;
+
+    @FXML
+    private TextField f1c1l3;
+
+    @FXML
+    private TextField f1c2l1;
+
+    @FXML
+    private TextField f1c2l2;
+
+    @FXML
+    private TextField f1c2l3;
+
+    @FXML
+    private TextField f1c3l1;
+
+    @FXML
+    private TextField f1c3l2;
+
+    @FXML
+    private TextField f1c3l3;
+
+    @FXML
+    private TextField f2c1l1;
+
+    @FXML
+    private TextField f2c1l2;
+
+    @FXML
+    private TextField f2c1l3;
+
+    @FXML
+    private TextField f2c2l1;
+
+    @FXML
+    private TextField f2c2l2;
+
+    @FXML
+    private TextField f2c2l3;
+
+    @FXML
+    private TextField f2c3l1;
+
+    @FXML
+    private TextField f2c3l2;
+
+    @FXML
+    private TextField f2c3l3;
+
+    @FXML
+    private TextField f3c1l1;
+
+    @FXML
+    private TextField f3c1l2;
+
+    @FXML
+    private TextField f3c1l3;
+
+    @FXML
+    private TextField f3c2l1;
+
+    @FXML
+    private TextField f3c2l2;
+
+    @FXML
+    private TextField f3c2l3;
+
+    @FXML
+    private TextField f3c3l1;
+
+    @FXML
+    private TextField f3c3l2;
+
+    @FXML
+    private TextField f3c3l3;
+
+    @FXML
+    private Button FilterImage;
     
     // My variables
     File selectedFile = null;
