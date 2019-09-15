@@ -21,7 +21,12 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="transformImage" layoutX="525.0" layoutY="292.0" mnemonicParsing="false" onAction="#TransformImage" style="-fx-background-color: #7580e4;" text="Transformer niveau gris" textFill="WHITE">
+                  <Button fx:id="transformImage" layoutX="500.0" layoutY="292.0" mnemonicParsing="false" onAction="#TransformImage" style="-fx-background-color: #7580e4;" text="Niveau gris" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="gaussianFilter" layoutX="646.0" layoutY="292.0" mnemonicParsing="false" onAction="#TransformGaussianFilter" style="-fx-background-color: #7580e4;" text="Gaussian Filter" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
