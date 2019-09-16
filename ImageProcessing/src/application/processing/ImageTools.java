@@ -540,31 +540,25 @@ public class ImageTools {
 	
 
 
-	public BufferedImage getFilteredImage(BufferedImage image){
-		return this.getFilteredImage(image, true);
+	public BufferedImage getFilteredImage(BufferedImage image, Filter filter){
+		return this.getFilteredImage(image, filter, true);
 	}
 
-	public BufferedImage getFilteredImage(BufferedImage image, boolean toGrayScale){
+	public BufferedImage getFilteredImage(BufferedImage image, Filter filter, boolean toGrayScale){
 		BufferedImage bi = ImageTools.copy(image);
-		Filter filter;
-		int size = this.filtersModel.getSize();
-		if(size == 0)
-			return null;
-		for(int i=0; i < size; i++){
-			filter = (Filter)this.filtersModel.getElementAt(i);
-			if(filter.data != null)
-				bi = ImageTools.applyFilter(bi, filter.data, toGrayScale);
-		}
+		
+		if(filter.data != null)
+			bi = ImageTools.applyFilter(bi, filter.data, toGrayScale);
 		return bi;
 	}
 	
-	public BufferedImage actionPerformed() {
+	public BufferedImage FilteringPicture(BufferedImage picture, Filter filter) {
 		this.image = null;
 		System.out.println("DIOUM");
 		//ImageTools.applyBlueFilter(this.imageCopy);
-		BufferedImage img1 = this.getFilteredImage(this.imageCopy);
-		BufferedImage img2 = this.getFilteredImage(this.imageCopy);
-		BufferedImage img3 = this.getFilteredImage(this.imageCopy);
+		BufferedImage img1 = this.getFilteredImage(picture, filter);
+		BufferedImage img2 = this.getFilteredImage(picture, filter);
+		BufferedImage img3 = this.getFilteredImage(picture, filter);
 		
 		if(img1 != null || img2 != null || img3 != null){
 			BufferedImage img4 = ImageTools.merge(img1, img2);

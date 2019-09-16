@@ -6,7 +6,7 @@ public class Filter {
 	
 	public float[] data;
 
-	protected Filter(float[] data){
+	public Filter(float[] data){
 		this.data = data;
 	}
 

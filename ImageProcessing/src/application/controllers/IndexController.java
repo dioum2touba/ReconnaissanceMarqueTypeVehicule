@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javax.imageio.ImageIO;
 
 import application.processing.EdgeDetection;
+import application.processing.Filter;
 import application.processing.GaussianFilter;
 import application.processing.ImageTools;
 import application.processing.ProcessingImage;
@@ -144,6 +145,7 @@ public class IndexController implements Initializable  {
     // My variables
     File selectedFile = null;
     String nomImageNB = null;
+    float data[] = null;
     
     @FXML
     private ComboBox<String> selectFiltre; 
@@ -171,8 +173,8 @@ public class IndexController implements Initializable  {
     		im_1.setImage(new Image(selectedFile.toURI().toString()));
     	}
     	else {
-			System.out.println("Probleme");
-		}
+		  	System.out.println("Probleme");
+		  }
     }
     
     @FXML
@@ -201,32 +203,39 @@ public class IndexController implements Initializable  {
 
     @FXML
     void TransformGaussianFilter(ActionEvent event) {
-    	BufferedImage image1 = null;
-		try {
-			image1 = ImageIO.read(selectedFile);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-    	System.out.println(selectedFile.toURI().toString() + "\nHeight: " + image1.getHeight() + "\nWidth: " + image1.getWidth());
-    	
-    	// Processing of my image
-    	BufferedImage dst = null;
-    	BufferedImage image = gaussian.filter(image1, dst);
-    	//BufferedImage convolveImg = ConvolutionImage(image);
-		/* edges.detectEdges(bufferedImage, selectedFilter) */
-    	//Convolver s
-    	if(image != null)
-    	{
-    		System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
-    		nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
-    		    try {
-    		      ImageIO.write(image, "jpg", new File(nomImageNB));
-    	    		im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
-    		    } catch (IOException e) {
-    				System.out.println("Probleme");
-    		    }
-    	}
+        BufferedImage image1 = null;
+
+        // Recuperer le filtre
+        this.ExtractStringFILTRE1();
+        this.ExtractStringFILTRE1();
+        this.ExtractStringFILTRE1();
+
+        Filter filtre = new Filter(this.data);
+        ImageTools imageTools = new ImageTools();
+
+        try {
+          image1 = ImageIO.read(selectedFile);
+        } catch (IOException e1) {
+          e1.printStackTrace();
+        }
+        System.out.println(selectedFile.toURI().toString() + "\nHeight: " + image1.getHeight() + "\nWidth: " + image1.getWidth());
+        
+        // Processing of my image
+        BufferedImage image = imageTools.getFilteredImage(image1, filtre);
+        //BufferedImage convolveImg = ConvolutionImage(image);
+      /* edges.detectEdges(bufferedImage, selectedFilter) */
+        //Convolver s
+        if(image != null)
+        {
+          System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
+          nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
+              try {
+                ImageIO.write(image, "jpg", new File(nomImageNB));
+                im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
+              } catch (IOException e) {
+              System.out.println("Probleme");
+              }
+        }
     }
 
     @FXML
@@ -275,4 +284,77 @@ public class IndexController implements Initializable  {
 	 * @FXML void EdgesDetection(ActionEvent event) {
 	 * edges.detectEdges(bufferedImage, selectedFilter) }
 	 */
+  
+
+  public void ExtractStringFILTRE1()
+  {
+      if(!this.f1c1l1.getText().isEmpty())
+          this.data[0] = Float.parseFloat(this.f1c1l1.getText());
+      if(!this.f1c2l1.getText().isEmpty())
+          this.data[1] = Float.parseFloat(this.f1c2l1.getText());
+      if(!this.f1c3l1.getText().isEmpty())
+          this.data[2] = Float.parseFloat(this.f1c3l1.getText());
+
+      if(!this.f1c1l2.getText().isEmpty())
+          this.data[3] = Float.parseFloat(this.f1c1l2.getText());
+      if(!this.f1c2l2.getText().isEmpty())
+          this.data[4] = Float.parseFloat(this.f1c2l2.getText());
+      if(!this.f1c3l2.getText().isEmpty())
+          this.data[5] = Float.parseFloat(this.f1c3l2.getText());
+
+      if(!this.f1c1l3.getText().isEmpty())
+          this.data[6] = Float.parseFloat(this.f1c1l3.getText());
+      if(!this.f1c2l3.getText().isEmpty())
+          this.data[7] = Float.parseFloat(this.f1c2l3.getText());
+      if(!this.f1c3l3.getText().isEmpty())
+          this.data[8] = Float.parseFloat(this.f1c3l3.getText());
+  }
+
+  public void ExtractStringFILTRE2()
+  {
+      if(!this.f2c1l1.getText().isEmpty())
+          this.data[0] = Float.parseFloat(this.f2c1l1.getText());
+      if(!this.f2c2l1.getText().isEmpty())
+          this.data[1] = Float.parseFloat(this.f2c2l1.getText());
+      if(!this.f2c3l1.getText().isEmpty())
+          this.data[2] = Float.parseFloat(this.f2c3l1.getText());
+
+      if(!this.f2c1l2.getText().isEmpty())
+          this.data[3] = Float.parseFloat(this.f2c1l2.getText());
+      if(!this.f2c2l2.getText().isEmpty())
+          this.data[4] = Float.parseFloat(this.f2c2l2.getText());
+      if(!this.f2c3l2.getText().isEmpty())
+          this.data[5] = Float.parseFloat(this.f2c3l2.getText());
+
+      if(!this.f2c1l3.getText().isEmpty())
+          this.data[6] = Float.parseFloat(this.f2c1l3.getText());
+      if(!this.f2c2l3.getText().isEmpty())
+          this.data[7] = Float.parseFloat(this.f2c2l3.getText());
+      if(!this.f2c3l3.getText().isEmpty())
+          this.data[8] = Float.parseFloat(this.f2c3l3.getText());
+  }
+  
+  public void ExtractStringFILTRE3()
+  {
+      if(!this.f3c1l1.getText().isEmpty())
+          this.data[0] = Float.parseFloat(this.f3c1l1.getText());
+      if(!this.f3c2l1.getText().isEmpty())
+          this.data[1] = Float.parseFloat(this.f3c2l1.getText());
+      if(!this.f3c3l1.getText().isEmpty())
+          this.data[2] = Float.parseFloat(this.f3c3l1.getText());
+
+      if(!this.f3c1l2.getText().isEmpty())
+          this.data[3] = Float.parseFloat(this.f3c1l2.getText());
+      if(!this.f3c2l2.getText().isEmpty())
+          this.data[4] = Float.parseFloat(this.f3c2l2.getText());
+      if(!this.f3c3l2.getText().isEmpty())
+          this.data[5] = Float.parseFloat(this.f3c3l2.getText());
+
+      if(!this.f3c1l3.getText().isEmpty())
+          this.data[6] = Float.parseFloat(this.f3c1l3.getText());
+      if(!this.f3c2l3.getText().isEmpty())
+          this.data[7] = Float.parseFloat(this.f3c2l3.getText());
+      if(!this.f3c3l3.getText().isEmpty())
+          this.data[8] = Float.parseFloat(this.f3c3l3.getText());
+  }
 }
