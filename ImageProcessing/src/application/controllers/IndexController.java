@@ -1,5 +1,6 @@
 package application.controllers;
 
+import java.awt.TextField;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
@@ -13,6 +14,7 @@ import java.util.ResourceBundle;
 import javax.imageio.ImageIO;
 
 import application.processing.EdgeDetection;
+import application.processing.GaussianFilter;
 import application.processing.ImageTools;
 import application.processing.ProcessingImage;
 import javafx.collections.FXCollections;
@@ -51,6 +53,93 @@ public class IndexController implements Initializable  {
 
     @FXML
     private ImageView img3;
+
+    @FXML
+    private Button gaussianFilter;
+
+    @FXML
+    private TextField f1c1l1;
+
+    @FXML
+    private TextField f1c1l2;
+
+    @FXML
+    private TextField f1c1l3;
+
+    @FXML
+    private TextField f1c2l1;
+
+    @FXML
+    private TextField f1c2l2;
+
+    @FXML
+    private TextField f1c2l3;
+
+    @FXML
+    private TextField f1c3l1;
+
+    @FXML
+    private TextField f1c3l2;
+
+    @FXML
+    private TextField f1c3l3;
+
+    @FXML
+    private TextField f2c1l1;
+
+    @FXML
+    private TextField f2c1l2;
+
+    @FXML
+    private TextField f2c1l3;
+
+    @FXML
+    private TextField f2c2l1;
+
+    @FXML
+    private TextField f2c2l2;
+
+    @FXML
+    private TextField f2c2l3;
+
+    @FXML
+    private TextField f2c3l1;
+
+    @FXML
+    private TextField f2c3l2;
+
+    @FXML
+    private TextField f2c3l3;
+
+    @FXML
+    private TextField f3c1l1;
+
+    @FXML
+    private TextField f3c1l2;
+
+    @FXML
+    private TextField f3c1l3;
+
+    @FXML
+    private TextField f3c2l1;
+
+    @FXML
+    private TextField f3c2l2;
+
+    @FXML
+    private TextField f3c2l3;
+
+    @FXML
+    private TextField f3c3l1;
+
+    @FXML
+    private TextField f3c3l2;
+
+    @FXML
+    private TextField f3c3l3;
+
+    @FXML
+    private Button FilterImage;
     
     // My variables
     File selectedFile = null;
@@ -67,6 +156,9 @@ public class IndexController implements Initializable  {
     
     // Object de detection 
     EdgeDetection edges = new EdgeDetection();
+    
+    // Gaussian Filter
+    GaussianFilter gaussian = new GaussianFilter();
     
     @FXML
     void ChoixImageAction(ActionEvent event) 
@@ -91,6 +183,36 @@ public class IndexController implements Initializable  {
     	
     	// Processing of my image
     	BufferedImage image = ProcessingImage.GrayScale(selectedFile);
+    	//BufferedImage convolveImg = ConvolutionImage(image);
+		/* edges.detectEdges(bufferedImage, selectedFilter) */
+    	//Convolver s
+    	if(image != null)
+    	{
+    		System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
+    		nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
+    		    try {
+    		      ImageIO.write(image, "jpg", new File(nomImageNB));
+    	    		im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
+    		    } catch (IOException e) {
+    				System.out.println("Probleme");
+    		    }
+    	}
+    }
+
+    @FXML
+    void TransformGaussianFilter(ActionEvent event) {
+    	BufferedImage image1 = null;
+		try {
+			image1 = ImageIO.read(selectedFile);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	System.out.println(selectedFile.toURI().toString() + "\nHeight: " + image1.getHeight() + "\nWidth: " + image1.getWidth());
+    	
+    	// Processing of my image
+    	BufferedImage dst = null;
+    	BufferedImage image = gaussian.filter(image1, dst);
     	//BufferedImage convolveImg = ConvolutionImage(image);
 		/* edges.detectEdges(bufferedImage, selectedFilter) */
     	//Convolver s

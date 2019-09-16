@@ -1,19 +1,24 @@
 package application.processing;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
 import java.awt.image.WritableRaster;
 import java.io.File;
-import java.io.IOException;
-import java.util.Vector;
 
 import javax.imageio.ImageIO;
+import javax.swing.DefaultListModel;
 
 public class ImageTools {
+	
+	DefaultListModel<Filter> filtersModel;
+	BufferedImage image, imageCopy;
+	String filename = "C:\\Users\\Sokhna Amy Diop\\Documents\\Projects\\RAPI_Segmentation\\Photo\\image13.jpEg";
+
+	
 	public static BufferedImage merge(BufferedImage bi1, BufferedImage bi2){
 		return ImageTools.merge(bi1, bi2, true);
 	}
@@ -531,8 +536,40 @@ public class ImageTools {
 		new ConvolveOp(new Kernel(3, 1, data2), ConvolveOp.EDGE_NO_OP, null).filter(destination, bi);
 		ConvolveOp c = new ConvolveOp(new Kernel(1, 3, data1), ConvolveOp.EDGE_NO_OP, null);
 		c.filter(destination, bi);
+	}	
+	
+
+
+	public BufferedImage getFilteredImage(BufferedImage image){
+		return this.getFilteredImage(image, true);
 	}
 
+	public BufferedImage getFilteredImage(BufferedImage image, boolean toGrayScale){
+		BufferedImage bi = ImageTools.copy(image);
+		Filter filter;
+		int size = this.filtersModel.getSize();
+		if(size == 0)
+			return null;
+		for(int i=0; i < size; i++){
+			filter = (Filter)this.filtersModel.getElementAt(i);
+			if(filter.data != null)
+				bi = ImageTools.applyFilter(bi, filter.data, toGrayScale);
+		}
+		return bi;
+	}
 	
-	
+	public BufferedImage actionPerformed() {
+		this.image = null;
+		System.out.println("DIOUM");
+		//ImageTools.applyBlueFilter(this.imageCopy);
+		BufferedImage img1 = this.getFilteredImage(this.imageCopy);
+		BufferedImage img2 = this.getFilteredImage(this.imageCopy);
+		BufferedImage img3 = this.getFilteredImage(this.imageCopy);
+		
+		if(img1 != null || img2 != null || img3 != null){
+			BufferedImage img4 = ImageTools.merge(img1, img2);
+			this.image = ImageTools.merge(img4, img3, true);			
+		}	
+		return image;
+	}
 }
