@@ -76,45 +76,45 @@
                   </Lighting>
                </effect>
             </Separator>
-            <TextField fx:id="f1c1l1" layoutX="5.0" layoutY="12.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c1l2" layoutX="6.0" layoutY="66.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c1l3" layoutX="6.0" layoutY="120.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c2l1" layoutX="52.0" layoutY="12.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c2l2" layoutX="52.0" layoutY="66.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c2l3" layoutX="52.0" layoutY="120.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c3l1" layoutX="99.0" layoutY="12.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c3l2" layoutX="99.0" layoutY="66.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f1c3l3" layoutX="100.0" layoutY="120.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <Button fx:id="FilterImage" layoutX="152.0" layoutY="224.0" mnemonicParsing="false" onAction="#LancerFiltre" prefHeight="62.0" prefWidth="196.0" style="-fx-background-color: #7580e4; -fx-font-size: 25px;" text="Filtrer l'image" textFill="WHITE">
+            <TextField fx:id="f1c1l1" layoutX="5.0" layoutY="12.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c1l2" layoutX="6.0" layoutY="71.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c1l3" layoutX="6.0" layoutY="130.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c2l1" layoutX="52.0" layoutY="12.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c2l2" layoutX="52.0" layoutY="71.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c2l3" layoutX="52.0" layoutY="130.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c3l1" layoutX="99.0" layoutY="12.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c3l2" layoutX="99.0" layoutY="71.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f1c3l3" layoutX="100.0" layoutY="130.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <Button fx:id="FilterImage" layoutX="152.0" layoutY="224.0" mnemonicParsing="false" onAction="#TransformFilter_v2" prefHeight="62.0" prefWidth="196.0" style="-fx-background-color: #7580e4; -fx-font-size: 25px;" text="Filtrer l'image" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Button>
-            <ImageView fitHeight="347.0" fitWidth="443.0" layoutX="6.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField fx:id="f2c1l1" layoutX="162.0" layoutY="13.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c1l2" layoutX="163.0" layoutY="67.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c1l3" layoutX="162.0" layoutY="121.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c2l1" layoutX="207.0" layoutY="13.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c2l2" layoutX="207.0" layoutY="67.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c2l3" layoutX="207.0" layoutY="121.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c3l1" layoutX="251.0" layoutY="13.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c3l2" layoutX="251.0" layoutY="67.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f2c3l3" layoutX="251.0" layoutY="121.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <Separator layoutX="149.0" layoutY="11.0" orientation="VERTICAL" prefHeight="158.0" prefWidth="4.0">
+            <ImageView fx:id="img4" fitHeight="347.0" fitWidth="443.0" layoutX="6.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="f2c1l1" layoutX="162.0" layoutY="13.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c1l2" layoutX="163.0" layoutY="72.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c1l3" layoutX="162.0" layoutY="131.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c2l1" layoutX="207.0" layoutY="13.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c2l2" layoutX="207.0" layoutY="72.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c2l3" layoutX="207.0" layoutY="131.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c3l1" layoutX="251.0" layoutY="13.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c3l2" layoutX="251.0" layoutY="72.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f2c3l3" layoutX="251.0" layoutY="131.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <Separator layoutX="149.0" layoutY="11.0" orientation="VERTICAL" prefHeight="170.0" prefWidth="4.0">
                <effect>
                   <InnerShadow />
                </effect>
             </Separator>
-            <TextField fx:id="f3c1l1" layoutX="318.0" layoutY="11.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c1l2" layoutX="319.0" layoutY="65.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c1l3" layoutX="318.0" layoutY="119.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c2l1" layoutX="363.0" layoutY="11.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c2l2" layoutX="363.0" layoutY="65.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c2l3" layoutX="363.0" layoutY="119.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c3l1" layoutX="407.0" layoutY="11.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c3l2" layoutX="407.0" layoutY="65.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <TextField fx:id="f3c3l3" layoutX="407.0" layoutY="119.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 30px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
-            <Separator layoutX="303.0" layoutY="11.0" orientation="VERTICAL" prefHeight="158.0" prefWidth="4.0">
+            <TextField fx:id="f3c1l1" layoutX="318.0" layoutY="11.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c1l2" layoutX="319.0" layoutY="70.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c1l3" layoutX="318.0" layoutY="129.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c2l1" layoutX="363.0" layoutY="11.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c2l2" layoutX="363.0" layoutY="70.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c2l3" layoutX="363.0" layoutY="129.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c3l1" layoutX="407.0" layoutY="11.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c3l2" layoutX="407.0" layoutY="70.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="f3c3l3" layoutX="407.0" layoutY="129.0" prefHeight="39.0" prefWidth="40.0" style="-fx-font-size: 20px; -fx-background-color: #7580e4 #7580e4; -fx-text-fill: #ffffff;" />
+            <Separator layoutX="305.0" layoutY="11.0" orientation="VERTICAL" prefHeight="171.0" prefWidth="4.0">
                <effect>
                   <InnerShadow />
                </effect>

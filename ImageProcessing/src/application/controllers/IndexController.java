@@ -1,6 +1,5 @@
 package application.controllers;
 
-import java.awt.TextField;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
@@ -10,21 +9,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import javax.imageio.ImageIO;
-
 import application.processing.EdgeDetection;
 import application.processing.Filter;
 import application.processing.GaussianFilter;
 import application.processing.ImageTools;
 import application.processing.ProcessingImage;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -54,6 +50,9 @@ public class IndexController implements Initializable  {
 
     @FXML
     private ImageView img3;
+
+    @FXML
+    private ImageView img4;
 
     @FXML
     private Button gaussianFilter;
@@ -142,25 +141,30 @@ public class IndexController implements Initializable  {
     @FXML
     private Button FilterImage;
     
+    @FXML
+    private ComboBox<String> selectFiltre; 
+    
     // My variables
     File selectedFile = null;
     String nomImageNB = null;
     float data[] = null;
-    
-    @FXML
-    private ComboBox<String> selectFiltre; 
-	
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-        selectFiltre.getItems().addAll("Horizontal Filter", "Vertical Filter", "Sobel Vertical Filter", 
-        		"Sobel Horizontal Filter", "Scharr Vertical Filter", "Scharr Horizontal Filter"); 
-	}
     
     // Object de detection 
     EdgeDetection edges = new EdgeDetection();
     
     // Gaussian Filter
     GaussianFilter gaussian = new GaussianFilter();
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+        selectFiltre.getItems().addAll("Horizontal Filter", "Vertical Filter", "Sobel Vertical Filter", 
+        		"Sobel Horizontal Filter", "Scharr Vertical Filter", "Scharr Horizontal Filter"); 
+        this.data = new float[9];
+        // Initialiser le filtre
+        this.SettingStringFILTRE1();
+        this.SettingStringFILTRE2();
+        this.SettingStringFILTRE3();
+	}
     
     @FXML
     void ChoixImageAction(ActionEvent event) 
@@ -203,6 +207,36 @@ public class IndexController implements Initializable  {
 
     @FXML
     void TransformGaussianFilter(ActionEvent event) {
+    	BufferedImage image1 = null;
+		try {
+			image1 = ImageIO.read(selectedFile);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	System.out.println(selectedFile.toURI().toString() + "\nHeight: " + image1.getHeight() + "\nWidth: " + image1.getWidth());
+
+    	// Processing of my image
+    	BufferedImage dst = null;
+    	BufferedImage image = gaussian.filter(image1, dst);
+    	//BufferedImage convolveImg = ConvolutionImage(image);
+		/* edges.detectEdges(bufferedImage, selectedFilter) */
+    	//Convolver s
+    	if(image != null)
+    	{
+    		System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
+    		nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
+    		    try {
+    		      ImageIO.write(image, "jpg", new File(nomImageNB));
+    	    		im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
+    		    } catch (IOException e) {
+    				System.out.println("Probleme");
+    		    }
+    	}
+    }
+
+    @FXML
+    void TransformFilter_v2(ActionEvent event) {
         BufferedImage image1 = null;
 
         // Recuperer le filtre
@@ -231,7 +265,7 @@ public class IndexController implements Initializable  {
           nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
               try {
                 ImageIO.write(image, "jpg", new File(nomImageNB));
-                im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
+                img4.setImage(new Image(new File(nomImageNB).toURI().toString()));
               } catch (IOException e) {
               System.out.println("Probleme");
               }
@@ -356,5 +390,53 @@ public class IndexController implements Initializable  {
           this.data[7] = Float.parseFloat(this.f3c2l3.getText());
       if(!this.f3c3l3.getText().isEmpty())
           this.data[8] = Float.parseFloat(this.f3c3l3.getText());
+  }
+  
+
+  
+
+  public void SettingStringFILTRE1()
+  {
+      this.f1c1l1.setText("-1.0");
+      this.f1c2l1.setText("1.0");
+      this.f1c3l1.setText("1.0");
+
+      this.f1c1l2.setText("-2.0");
+      this.f1c2l2.setText("0.0");
+      this.f1c3l2.setText("2.0");
+
+      this.f1c1l3.setText("-1.0");
+      this.f1c2l3.setText("-1.0");
+      this.f1c3l3.setText("1.0");
+  }
+  
+  public void SettingStringFILTRE2()
+  {
+      this.f2c1l1.setText("1.0");
+      this.f2c2l1.setText("2.0");
+      this.f2c3l1.setText("1.0");
+
+      this.f2c1l2.setText("-1.0");
+      this.f2c2l2.setText("0.0");
+      this.f2c3l2.setText("1.0");
+
+      this.f2c1l3.setText("-1.0");
+      this.f2c2l3.setText("-2.0");
+      this.f2c3l3.setText("-1.0");
+  }
+  
+  public void SettingStringFILTRE3()
+  {
+      this.f3c1l1.setText("-1.0");
+      this.f3c2l1.setText("-1.0");
+      this.f3c3l1.setText("-1.0");
+
+      this.f3c1l2.setText("-1.0");
+      this.f3c2l2.setText("8.0");
+      this.f3c3l2.setText("-1.0");
+
+      this.f3c1l3.setText("-1.0");
+      this.f3c2l3.setText("-1.0");
+      this.f3c3l3.setText("-1.0");
   }
 }
