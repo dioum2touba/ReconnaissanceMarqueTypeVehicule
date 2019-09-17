@@ -189,8 +189,7 @@ public class IndexController implements Initializable  {
     	
     	// Processing of my image
     	BufferedImage image = ProcessingImage.GrayScale(selectedFile);
-    	//BufferedImage convolveImg = ConvolutionImage(image);
-		/* edges.detectEdges(bufferedImage, selectedFilter) */
+
     	//Convolver s
     	if(image != null)
     	{
@@ -219,13 +218,11 @@ public class IndexController implements Initializable  {
     	// Processing of my image
     	BufferedImage dst = null;
     	BufferedImage image = gaussian.filter(image1, dst);
-    	//BufferedImage convolveImg = ConvolutionImage(image);
-		/* edges.detectEdges(bufferedImage, selectedFilter) */
-    	//Convolver s
+
     	if(image != null)
     	{
     		System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
-    		nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
+    		nomImageNB = "D:\\Memoire\\Output_Gaussian"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
     		    try {
     		      ImageIO.write(image, "jpg", new File(nomImageNB));
     	    		im_2.setImage(new Image(new File(nomImageNB).toURI().toString()));
@@ -248,7 +245,7 @@ public class IndexController implements Initializable  {
         ImageTools imageTools = new ImageTools();
 
         try {
-          image1 = ImageIO.read(selectedFile);
+          image1 = ImageIO.read(new File(nomImageNB));
         } catch (IOException e1) {
           e1.printStackTrace();
         }
@@ -256,13 +253,11 @@ public class IndexController implements Initializable  {
         
         // Processing of my image
         BufferedImage image = imageTools.getFilteredImage(image1, filtre);
-        //BufferedImage convolveImg = ConvolutionImage(image);
-      /* edges.detectEdges(bufferedImage, selectedFilter) */
-        //Convolver s
+
         if(image != null)
         {
           System.out.println("Resultat: "+"\nHeight: " + image.getHeight() + "\nWidth: " + image.getWidth());
-          nomImageNB = "D:\\Memoire\\Output_"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
+          nomImageNB = "D:\\Memoire\\Output_v2"+ (int)Math.floor(Math.random() * 6276678)+".jpg";
               try {
                 ImageIO.write(image, "jpg", new File(nomImageNB));
                 img4.setImage(new Image(new File(nomImageNB).toURI().toString()));
